@@ -1,9 +1,9 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "Images.h"
-#include "Styles.h"
-#include "Presets.h"
+#include "../Modules/Images.h"
+#include "../Modules/Styles.h"
+#include "../Modules/Presets.h"
 
 //==============================================================================
 class PresetTaggerComponent : public Component

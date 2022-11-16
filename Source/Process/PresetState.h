@@ -1,10 +1,10 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "Presets.h"
-#include "Keyboard.h"
-#include "DataMessage.h"
-#include "DataMessageBroadcaster.h"
+#include "../Modules/Presets.h"
+#include "../Modules/Keyboard.h"
+#include "../Messaging/DataMessage.h"
+#include "../Messaging/DataMessageBroadcaster.h"
 
 //==============================================================================
 class PresetState : public DataMessageBroadcaster

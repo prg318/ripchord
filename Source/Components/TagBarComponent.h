@@ -1,9 +1,9 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "MainProcess.h"
+#include "../Process/MainProcess.h"
 #include "TagComponent.h"
-#include "DataMessageListener.h"
+#include "../Messaging/DataMessageListener.h"
 
 //==============================================================================
 class TagBarComponent : public Component, public DataMessageListener

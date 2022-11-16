@@ -1,10 +1,10 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "Styles.h"
-#include "MainProcess.h"
-#include "DataMessage.h"
-#include "DataMessageListener.h"
+#include "../Modules/Styles.h"
+#include "../Process/MainProcess.h"
+#include "../Messaging/DataMessage.h"
+#include "../Messaging/DataMessageListener.h"
 #include "KeyboardViewComponent.h"
 #include "PresetViewComponent.h"
 #include "RightClickComponent.h"

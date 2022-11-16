@@ -1,10 +1,10 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "DataMessage.h"
-#include "DataMessageBroadcaster.h"
-#include "Sorting.h"
-#include "Midi.h"
+#include "../Messaging/DataMessage.h"
+#include "../Messaging/DataMessageBroadcaster.h"
+#include "../Modules/Sorting.h"
+#include "../Modules/Midi.h"
 #include <algorithm>
 #include <random>
 

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "MainProcess.h"
-#include "Images.h"
-#include "Styles.h"
+#include "../Process/MainProcess.h"
+#include "../Modules/Images.h"
+#include "../Modules/Styles.h"
 
 //==============================================================================
 class RecordedMidiComponent : public Component, public DragAndDropContainer

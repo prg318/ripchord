@@ -1,10 +1,10 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "MainProcess.h"
+#include "../Process/MainProcess.h"
 #include "PresetComponent.h"
 #include "PresetTaggerComponent.h"
-#include "DataMessageListener.h"
+#include "../Messaging/DataMessageListener.h"
 
 //==============================================================================
 class PresetBrowserComponent : public Component, public DataMessageListener

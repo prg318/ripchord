@@ -1,6 +1,6 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
-#include "Midi.h"
+#include "Modules/Midi.h"
 
 //==============================================================================
 RipchordPluginProcessor::RipchordPluginProcessor()

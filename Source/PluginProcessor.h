@@ -1,7 +1,7 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "MainProcess.h"
+#include "Process/MainProcess.h"
 
 //==============================================================================
 class RipchordPluginProcessor : public AudioProcessor

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "Images.h"
-#include "Styles.h"
+#include "../Modules/Images.h"
+#include "../Modules/Styles.h"
 #include "DeleteComponent.h"
 
 //==============================================================================

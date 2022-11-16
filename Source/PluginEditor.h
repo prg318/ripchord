@@ -2,8 +2,8 @@
 
 #include "JuceHeader.h"
 #include "PluginProcessor.h"
-#include "MainComponent.h"
-#include "Widgets.h"
+#include "Components/MainComponent.h"
+#include "Modules/Widgets.h"
 
 //==============================================================================
 class RipchordPluginEditor : public AudioProcessorEditor

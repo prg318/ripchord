@@ -1,9 +1,9 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "MainProcess.h"
+#include "../Process/MainProcess.h"
 #include "KeyboardComponent.h"
-#include "DataMessageListener.h"
+#include "../Messaging/DataMessageListener.h"
 
 //==============================================================================
 class InputKeyboardComponent : public KeyboardComponent, public DataMessageListener

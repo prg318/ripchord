@@ -1,5 +1,7 @@
 #include "PresetState.h"
-#include "Midi.h"
+#include "../Modules/Midi.h"
+
+#define JUCE_MODAL_LOOPS_PERMITTED 1
 
 //==============================================================================
 PresetState::PresetState()

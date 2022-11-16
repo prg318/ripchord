@@ -1,10 +1,10 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "System.h"
-#include "Styles.h"
-#include "DataMessage.h"
-#include "DataMessageBroadcaster.h"
+#include "../Modules/System.h"
+#include "../Modules/Styles.h"
+#include "../Messaging/DataMessage.h"
+#include "../Messaging/DataMessageBroadcaster.h"
 
 //==============================================================================
 class GlobalState : public DataMessageBroadcaster

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "Presets.h"
-#include "DataMessage.h"
-#include "DataMessageBroadcaster.h"
+#include "../Modules/Presets.h"
+#include "../Messaging/DataMessage.h"
+#include "../Messaging/DataMessageBroadcaster.h"
 
 //==============================================================================
 class BrowserState : public DataMessageBroadcaster

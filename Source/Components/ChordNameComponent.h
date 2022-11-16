@@ -1,10 +1,10 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "Styles.h"
-#include "TextLabel.h"
-#include "MainProcess.h"
-#include "DataMessageListener.h"
+#include "../Modules/Styles.h"
+#include "../Modules/TextLabel.h"
+#include "../Process/MainProcess.h"
+#include "../Messaging/DataMessageListener.h"
 
 //==============================================================================
 class ChordNameComponent : public Component, public DataMessageListener

@@ -1,10 +1,10 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "Images.h"
-#include "Styles.h"
-#include "MainProcess.h"
-#include "DataMessageListener.h"
+#include "../Modules/Images.h"
+#include "../Modules/Styles.h"
+#include "../Process/MainProcess.h"
+#include "../Messaging/DataMessageListener.h"
 
 //==============================================================================
 class RightClickComponent : public Component, public DataMessageListener

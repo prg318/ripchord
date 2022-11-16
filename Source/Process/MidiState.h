@@ -1,9 +1,9 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "DataMessage.h"
-#include "DataMessageBroadcaster.h"
-#include "Midi.h"
+#include "../Messaging/DataMessage.h"
+#include "../Messaging/DataMessageBroadcaster.h"
+#include "../Modules/Midi.h"
 #include <queue>
 
 //==============================================================================

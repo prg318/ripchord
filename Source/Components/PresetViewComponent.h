@@ -1,14 +1,14 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "Images.h"
-#include "Styles.h"
-#include "MainProcess.h"
+#include "../Modules/Images.h"
+#include "../Modules/Styles.h"
+#include "../Process/MainProcess.h"
 #include "TagBarComponent.h"
 #include "TagManagerComponent.h"
 #include "PresetBrowserComponent.h"
-#include "DataMessageListener.h"
-#include "DataMessage.h"
+#include "../Messaging/DataMessageListener.h"
+#include "../Messaging/DataMessage.h"
 
 //==============================================================================
 class PresetViewComponent : public Component, public DataMessageListener

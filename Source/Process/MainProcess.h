@@ -5,8 +5,8 @@
 #include "PresetState.h"
 #include "BrowserState.h"
 #include "ControlsState.h"
-#include "MidiState.h"
-#include "Midi.h"
+#include "../Process/MidiState.h"
+#include "../Modules/Midi.h"
 
 //==============================================================================
 class MainProcess

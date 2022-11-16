@@ -1,11 +1,11 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "Images.h"
-#include "Styles.h"
-#include "MainProcess.h"
+#include "../Modules/Images.h"
+#include "../Modules/Styles.h"
+#include "../Process/MainProcess.h"
 #include "TagBrowserComponent.h"
-#include "DataMessageListener.h"
+#include "../Messaging/DataMessageListener.h"
 
 //==============================================================================
 class TagManagerComponent : public Component, public DataMessageListener
