@@ -23,7 +23,7 @@ Build using the generated Makefile:
 
 ## FRUT and cmake
 
-(https://github.com/McMartin/FRUT)[FRUT] is a tool that can convert a Projucer
+FRUT (https://github.com/McMartin/FRUT) is a tool that can convert a Projucer
 project to a cmake project.  FRUT was used to generate the starting point for
 the `CMakeLists.txt` in this repo with this command:
 
