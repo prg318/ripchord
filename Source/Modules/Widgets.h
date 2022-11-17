@@ -12,7 +12,9 @@ public:
     //==============================================================================
     Widgets()
     {
-        setDefaultSansSerifTypefaceName ("Arial");
+        #if JUCE_WINDOWS
+            setDefaultSansSerifTypefaceName ("Arial");
+        #endif
 
         setColour (DrawableButton::backgroundColourId, COLOR_TRANSPARENT);
         setColour (DrawableButton::backgroundOnColourId, COLOR_TRANSPARENT);
