@@ -115,6 +115,14 @@ void RipchordPluginProcessor::processBlock (AudioBuffer<float>& inAudioBuffer, M
     auto playhead = getPlayHead();
     const double defaultBpm = 100.0;
 
+    auto totalNumInputChannels  = getTotalNumInputChannels();
+    auto totalNumOutputChannels = getTotalNumOutputChannels();
+
+    // Clear audio input buffer to prevent screaching feedback
+    // Ripchord doesn't need to use audio input - only MIDI
+    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
+        inAudioBuffer.clear (i, 0, inAudioBuffer.getNumSamples());
+
     if (playhead != nullptr)
     {
         AudioPlayHead::PositionInfo info;
