@@ -23,8 +23,10 @@ namespace System
         #if JUCE_MAC || JUCE_IOS
             File directory ("~/Library/");
             directory = directory.getChildFile ("Application Support");
-        #elif JUCE_LINUX || JUCE_ANDROID
+        #elif JUCE_ANDROID
             const File directory ("~");
+        #elif JUCE_LINUX
+            const File directory ("~/.local/share");
         #elif JUCE_WINDOWS
             File directory (File::getSpecialLocation (File::userApplicationDataDirectory));
         #endif
