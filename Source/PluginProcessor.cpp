@@ -117,11 +117,19 @@ void RipchordPluginProcessor::processBlock (AudioBuffer<float>& inAudioBuffer, M
 
     if (playhead != nullptr)
     {
-        AudioPlayHead::CurrentPositionInfo info;
+        AudioPlayHead::PositionInfo info;
 
-        if (playhead->getCurrentPosition(info))
+        if(playhead->getPosition().hasValue())
         {
-            const double bpm = info.bpm > 0 ? info.bpm : defaultBpm;
+            info = *playhead->getPosition();
+        }
+        else
+        {
+            return;
+        }
+        if (info.getIsPlaying())
+        {
+            double bpm = *info.getBpm();
             mMainProcess.handleProcessBlock (inMidiBuffer, inAudioBuffer.getNumSamples(), getSampleRate(), bpm);
         }
         else
