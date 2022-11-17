@@ -44,6 +44,13 @@ this, but I haven't looked into it yet.  Use the following to build:
     cmake ../
     make
 
+## CLAP Support
+
+ripchord can be built as a CLAP unit with the help of https://github.com/free-audio/clap-juce-extensions
+
+Follow the instructions on the clap-juce-extensions README and modify the
+included `CMakeLists-CLAP.txt` file to build CLAP.
+
 # open source
 
 Ripchord is open source under the GNU General Public License v3.0. The license can be found here: https://github.com/trackbout/ripchord/blob/master/LICENSE
