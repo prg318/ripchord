@@ -83,6 +83,8 @@ private:
     std::map<int, Chord> saveMidiFile (File midiFile);
     std::map<int, Chord> saveMPCFile (File mpcFile);
 
+    std::unique_ptr<FileChooser> chooser;
+
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PresetState)
 };

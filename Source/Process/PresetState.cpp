@@ -1,8 +1,6 @@
 #include "PresetState.h"
 #include "../Modules/Midi.h"
 
-#define JUCE_MODAL_LOOPS_PERMITTED 1
-
 //==============================================================================
 PresetState::PresetState()
 {
@@ -231,11 +229,15 @@ void PresetState::handleClickSave()
 
 void PresetState::handleClickImportMidi()
 {
-    FileChooser chooser ("Select a MIDI file(s)...", DESKTOP_FOLDER, "*.mid");
+    chooser = std::make_unique<FileChooser>("Select a MIDI file(s)...",
+                                        DESKTOP_FOLDER,
+                                        "*.mid");
 
-    if (chooser.browseForMultipleFilesToOpen())
+    auto flags = FileBrowserComponent::canSelectMultipleItems | FileBrowserComponent::openMode;
+
+    chooser->launchAsync(flags, [this](const FileChooser& fc)
     {
-        juce::Array<File> chosenFiles = chooser.getResults();
+        juce::Array<File> chosenFiles = fc.getResults();
 
         for (int index = 0; index < chosenFiles.size(); index++)
         {
@@ -250,33 +252,41 @@ void PresetState::handleClickImportMidi()
                 saveMidiFile (chosenFile);
             }
         }
-    }
+    });
 }
 
 void PresetState::handleClickExportMidi()
 {
     if (!isPresetValid()) { return; }
 
-    FileChooser chooser ("Export MIDI as...", DESKTOP_FOLDER, "*.mid");
+    chooser = std::make_unique<FileChooser> ("Export MIDI as...",
+                                            DESKTOP_FOLDER,
+                                            "*.mid");
 
-    if (chooser.browseForFileToSave (true))
+    auto flags = FileBrowserComponent::saveMode;
+
+    chooser->launchAsync(flags, [this](const FileChooser& fc)
     {
         MidiFile midiFile;
-        chooser.getResult().File::deleteFile();
-        FileOutputStream stream (chooser.getResult());
+        fc.getResult().File::deleteFile();
+        FileOutputStream stream (fc.getResult());
         midiFile.setTicksPerQuarterNote (TICKS_PER_QUARTER_NOTE);
         midiFile.addTrack (Presets::getMidiSequenceFromChords (mChords));
         midiFile.writeTo (stream);
-    }
+    });
 }
 
 void PresetState::handleClickImportPreset()
 {
-    FileChooser chooser ("Select a preset file(s)...", DESKTOP_FOLDER, "*" + PRESET_EXTENSION);
+    chooser = std::make_unique<FileChooser> ("Select a preset file(s)...",
+                                            DESKTOP_FOLDER,
+                                            "*" + PRESET_EXTENSION);
 
-    if (chooser.browseForMultipleFilesToOpen())
+    auto flags = FileBrowserComponent::canSelectMultipleItems | FileBrowserComponent::openMode;
+
+    chooser->launchAsync(flags, [this](const FileChooser& fc)
     {
-        juce::Array<File> chosenFiles = chooser.getResults();
+        juce::Array<File> chosenFiles = fc.getResults();
 
         for (int index = 0; index < chosenFiles.size(); index++)
         {
@@ -291,31 +301,39 @@ void PresetState::handleClickImportPreset()
                 savePresetFile (chosenFile);
             }
         }
-    }
+    });
 }
 
 void PresetState::handleClickExportPreset()
 {
     if (!isPresetValid()) { return; }
 
-    FileChooser chooser ("Export preset as...", DESKTOP_FOLDER, "*" + PRESET_EXTENSION);
+    chooser = std::make_unique<FileChooser> ("Export preset as...",
+                                        DESKTOP_FOLDER,
+                                        "*" + PRESET_EXTENSION);
 
-    if (chooser.browseForFileToSave (true))
+    auto flags = FileBrowserComponent::saveMode;
+
+    chooser->launchAsync(flags, [this](const FileChooser& fc)
     {
         XmlElement rootXml ("ripchord");
-        FileOutputStream stream (chooser.getResult());
+        FileOutputStream stream (fc.getResult());
         rootXml.addChildElement (Presets::getPresetXmlFromChords (mChords));
         rootXml.writeTo (stream);
-    }
+    });
 }
 
 void PresetState::handleClickImportMPC()
 {
-    FileChooser chooser ("Select a MPC file(s)...", DESKTOP_FOLDER, "*.progression");
+    chooser = std::make_unique<FileChooser> ("Select a MPC file(s)...",
+                                        DESKTOP_FOLDER,
+                                        "*.progression");
 
-    if (chooser.browseForMultipleFilesToOpen())
+    auto flags = FileBrowserComponent::canSelectMultipleItems | FileBrowserComponent::openMode;
+
+    chooser->launchAsync(flags, [this](const FileChooser& fc)
     {
-        juce::Array<File> chosenFiles = chooser.getResults();
+        juce::Array<File> chosenFiles = fc.getResults();
 
         for (int index = 0; index < chosenFiles.size(); index++)
         {
@@ -330,7 +348,7 @@ void PresetState::handleClickImportMPC()
                 saveMPCFile (chosenFile);
             }
         }
-    }
+    });
 }
 
 void PresetState::handleClickDuplicate()
