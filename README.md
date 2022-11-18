@@ -1,4 +1,4 @@
-# ripchord (with Linux support)
+# ripchord (with Linux and CLAP support)
 
 Ripchord is a free MIDI plugin for Mac and PC that makes it easy to create, perform and remix chord progressions. The plugin manual and download can be found here: https://trackbout.com/ripchord
 
