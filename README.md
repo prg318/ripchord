@@ -7,10 +7,6 @@ Ripchord is a free MIDI plugin for Mac and PC that makes it easy to create, perf
 This fork updates the build files to work on Linux.  There are two different
 methods for building on Linux:  Projucer/make or FRUT/cmake.
 
-Builds of both versions are available to download in the Releases - I had some
-issues with erroneous sound output on the Projucer build.  To prevent any
-erroneous noise, just mute the audio of plugin in your host.
-
 ## Projucer
 
 Clone this repo and open the `Ripchord.jucer` file with `Projucer` (the official
